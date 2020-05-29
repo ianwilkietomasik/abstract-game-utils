@@ -1,0 +1,128 @@
+code design version 1
+6.12.19
+
+public abstract class GameState
+
+## will contain classes, functions, and data members for a current state of a game
+	
+	data members:
+
+	classes:
+
+	abstract class Endstate extends GameState
+
+		## will represent the end state of the game
+
+
+	methods:
+
+	abstract boolean equals(GameState state)
+
+		## will compare two game states and return true if they are the same state, even if the state was achieved from different paths
+
+	abstract ArrayList <GameState> exploreOneMove()
+
+		## returns all of the possible states of depth one away from the current state
+
+	abstract ArrayList <GameState> search(Callable<Boolean> goalFunction(GamesState state))
+
+		## returns an ArrayList representing a path to a goal, while calling goalFunction to check if the current state is an end state. I have a question here. Could you please explain to me exactly how callable methods work and why its useful for this case?
+
+	abstract Callable <Boolean> goalFunction(GameState state)
+
+		## given a state, returns true if that state is an end state
+
+	abstract ArrayList <GameState> bestSolution(GameState state)
+		
+		## given a state, uses the search function to find all possible solutions to the game, while maintaining a variable in hand that represents the shortest solution found so far. As new paths are found, the variable is updated. After the method is done executing, an ArrayList representing the best solution will be returned
+
+
+
+
+
+
+
+		
+		
+public abstract class Piece
+
+	data members:
+
+	classes:
+
+	methods:
+	
+	select
+		
+		## Enables the player to use the piece. Changes the color of the piece on the UI
+	
+	ArrayList <Tile> getPossibleMoves
+	
+		## lists the moves that are possible with this piece
+	
+	add
+	
+		
+
+
+
+public abstract class Character
+
+	data members:
+
+	classes:
+
+	methods:
+
+
+
+public abstract class Tile
+
+	## will represent one tile on the board
+
+	data members:
+	
+	int id = Null;
+	
+		## represents a number which identifies the tile. Set to Null as a default.
+	
+	Boolean occupied
+		
+		## True iff the tile is occupied by a piece in the game
+	
+	classes:
+	
+	methods:
+	
+	Boolean isOccupied(Tile tile)
+		
+		## returns true iff the tile is occupied by a character or a piece
+	
+	changeTileNum(int num)
+
+		## changes the tile number to num
+
+	int getTileNum(Tile tile)
+	
+		## returns the number of the tile
+
+	
+	
+	
+public abstract class Board
+
+	## represent the board of the game
+
+	data members:
+	
+	ArrayList<ArrayList> <Tile> board
+		
+		## represents the tiles of the board, can support null entries
+	
+	
+	
+	
+	classes:
+	
+	methods:
+
