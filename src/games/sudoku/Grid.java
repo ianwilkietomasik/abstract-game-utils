@@ -1,3 +1,5 @@
+package src.games.sudoku;
+
 import java.util.ArrayList;
 
 /** represents an abstract grid */

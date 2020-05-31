@@ -1,3 +1,5 @@
+package src.games.sudoku;
+
 /* This is the abstract class for a tile, which will be inheritable by
 any of the games */
 public class Tile {
