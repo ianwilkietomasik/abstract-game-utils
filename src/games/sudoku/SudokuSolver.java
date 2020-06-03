@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 public class SudokuSolver {
 
-  public ArrayList<SudokuState> getNextStates(SudokuState sudokuState) {
-    // TODO //
+  public SudokuSolver() {
 
   }
+
+  // public ArrayList<SudokuState> getNextStates(SudokuState sudokuState) {
+  // TODO //}
 
   /**
    * checkRowCol is true if rowcol is true if 1: rowcol = col and all of the
